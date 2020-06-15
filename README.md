@@ -1,4 +1,4 @@
-# IS0639-3 Java Library
+# IS0639 Java Library
 
 This product is a Java Library wrapping language codes of format ISO 639
 and providing easy access to alternative codes of a language.
@@ -38,15 +38,18 @@ The codes table lists the following columns for each language (see <https://iso6
 
 ## Usage
 
-Use static methods from class `ISO639_3` to lookup a language with a given code.
-Result (if any) is of type `Language` containing all data of the corresponding line in the codes table.
+Use static methods from class `ISO639Languages` to lookup a language with a given code.
+Result (if any) is of type `ISO639Language` containing all data of the corresponding line in the codes table.
 
 ### Examples
 
 - Get Part1 code (as used for Java Locale) for a given Part2B code (as used in MARC XML):
 
-
+```java
+ISO639Language result = ISO639Languages.getByPart2BCode("ger");
+Locale locale = new Locale(result.getPart1());
+```
 
 ## Attribution
 
- SIL International (formerly known as the Summer Institute of Linguistics), <https://www.iso639-3.sil.org>
+SIL International (formerly known as the Summer Institute of Linguistics), <https://www.iso639-3.sil.org>
