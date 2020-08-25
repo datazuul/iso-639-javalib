@@ -53,12 +53,12 @@ public class ISO639Languages {
     language.setPart1(part1);
 
     String scope = fullResult[4];
-    if (scope != null && !scope.isBlank()) {
+    if (scope != null && !scope.trim().isEmpty()) {
       language.setScope(scope.charAt(0));
     }
 
     String languageType = fullResult[5];
-    if (languageType != null && !languageType.isBlank()) {
+    if (languageType != null && !languageType.trim().isEmpty()) {
       language.setLanguageType(languageType.charAt(0));
     }
 
