@@ -22,7 +22,7 @@ Introduction taken from <https://iso639-3.sil.org/about/relationships>:
 
 ## Codes table and implementation details
 
-The wrapped codes table has been downloaded from <https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3_Code_Tables_20200130.zip>, dated from 01/30/2020.
+The wrapped codes table has been downloaded from <https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab>, dated from 01/20/2022.
 It is incorporated into this library without changes.
 
 The codes table lists the following columns for each language (see <https://iso639-3.sil.org/code_tables/download_tables#639-3%20Code%20Set>):

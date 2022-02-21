@@ -1,4 +1,4 @@
-package org.alexana.iso639;
+package com.datazuul.language.iso639;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,7 +13,7 @@ public class ISO639Languages {
   static {
     LANGUAGES = new ArrayList<>();
     Scanner sc = null;
-    try (InputStream inputStream = ISO639Languages.class.getClassLoader().getResourceAsStream("iso-639-3_20200130.tab")) {
+    try (InputStream inputStream = ISO639Languages.class.getClassLoader().getResourceAsStream("iso-639-3_20220120.tab")) {
       sc = new Scanner(inputStream);
 
       if (sc.hasNext()) {

@@ -1,4 +1,4 @@
-package org.alexana.iso639;
+package com.datazuul.language.iso639;
 
 /**
  * Introduction taken from <a href="https://iso639-3.sil.org/about/relationships">SIL homepage</a>:
