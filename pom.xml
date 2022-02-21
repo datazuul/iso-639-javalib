@@ -5,7 +5,7 @@
   <name>datazuul libs: ISO 639 Java Library</name>
   <groupId>com.datazuul.language</groupId>
   <artifactId>iso-639</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.2</version>
   <packaging>jar</packaging>
   
   <properties>
