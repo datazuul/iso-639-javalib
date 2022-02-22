@@ -16,7 +16,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
       - uses: actions/cache@v2
         with:
           path: ~/.m2/repository
@@ -29,11 +30,5 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
       - name: Build with Maven
-        working-directory: github-actions-java-maven
         run: mvn --batch-mode --update-snapshots verify
-      - name: Upload Maven build artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: artifact.jar
-          path: github-actions-java-maven/target/github-actions-java-maven.jar
 
