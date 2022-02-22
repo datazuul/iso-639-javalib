@@ -1,0 +1,39 @@
+# This workflow will build a Java project with Maven
+# For more information see:
+# https://rieckpil.de/github-actions-for-java-automate-your-maven-workflows/
+# https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+# https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
+# https://docs.github.com/en/actions/publishing-packages/publishing-java-packages-with-maven
+# https://docs.github.com/en/actions/publishing-packages/publishing-java-packages-with-maven#publishing-packages-to-github-packages
+# https://docs.github.com/en/actions/security-guides/automatic-token-authentication
+
+name: Build on push and pull request
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+      - name: Set up JDK 8
+        uses: actions/setup-java@v2
+        with:
+          java-version: '8'
+          distribution: 'adopt'
+      - name: Build with Maven
+        working-directory: github-actions-java-maven
+        run: mvn --batch-mode --update-snapshots verify
+      - name: Upload Maven build artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifact.jar
+          path: github-actions-java-maven/target/github-actions-java-maven.jar
+
