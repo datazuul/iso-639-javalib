@@ -36,6 +36,26 @@ The codes table lists the following columns for each language (see <https://iso6
 - Ref_Name (varchar(150) NOT NULL): Reference language name
 - Comment (varchar(150) NULL): Comment relating to one or more of the columns
 
+## Download
+
+See GitHub Packages: <https://github.com/datazuul/iso-639-javalib/packages/1267001>
+
+### Apache Maven
+
+Add as dependency to your Maven `pom.xml`:
+
+```
+<dependency>
+  <groupId>com.datazuul.language</groupId>
+  <artifactId>iso-639</artifactId>
+  <version>1.0.2</version>
+</dependency>
+```
+
+Until today, you need to add your authentication credentials (Personal Access Token) to your `settings.xml` like described here:
+
+[Apache Maven: Authenticating with a personal access token](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-with-a-personal-access-token)
+
 ## Usage
 
 Use static methods from class `ISO639Languages` to lookup a language with a given code.
