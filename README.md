@@ -52,9 +52,39 @@ Add as dependency to your Maven `pom.xml`:
 </dependency>
 ```
 
-Until today, you need to add your authentication credentials (Personal Access Token) to your `settings.xml` like described here:
+Add GitHub Packages repository to repositories section in `pom.xml`:
 
-[Apache Maven: Authenticating with a personal access token](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-with-a-personal-access-token)
+```
+<repositories>
+  <repository>
+    <id>github</id>
+    <url>https://maven.pkg.github.com/datazuul/iso-639</url>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
+</repositories>
+```
+
+Until today, you need to add your authentication credentials (Personal Access Token) to your `settings.xml` to be able to read/download the GitHub packages.
+
+* Login to GitHub and navigate to <https://github.com/settings/tokens>
+* Create a new Personal Access Token (classic), e.g. named "GitHub Packages Read (public_repo, read:packages) "
+* Select scopes "public_repo" and "read:packages"
+* Save/Create token and copy token value
+
+Put your GitHub username and the created personal access token into `~/.m2/settings.xml`:
+
+```
+<servers>
+  <server>
+    <id>github</id>
+    <username>USERNAME</username>
+    <password>TOKEN</password>
+  </server>
+</servers>
+```
+See [Apache Maven: Authenticating with a personal access token](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-with-a-personal-access-token)
 
 ## Usage
 
