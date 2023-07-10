@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class ISO639Languages {
@@ -106,6 +107,14 @@ public class ISO639Languages {
     return null;
   }
 
+  public static ISO639Language getByLocale(Locale locale) {
+      if (locale == null) {
+        return null;
+      }
+      String part1 = locale.getLanguage();
+      return getByPart1Code(part1);
+    }
+  
   public static ISO639Language getByPart1Code(String part1) {
     if (part1 == null || part1.isEmpty()) {
       return null;
