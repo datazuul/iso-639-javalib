@@ -41,6 +41,9 @@
       <id>github</id>
       <name>GitHub Packages</name>
       <url>https://maven.pkg.github.com/datazuul/iso-639-javalib</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
     </repository>
   </distributionManagement>
 </project>
